@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { array, number, object, string } from 'prop-types';
 var d3 = require("d3");
 
@@ -6,7 +6,7 @@ const merge = function(one, two) {
   return Object.assign({}, one, two);
 };
 
-export default class BarChart extends React.Component {
+export class BarChart extends Component {
   static propTypes = {
     data : array.isRequired,
     width : number.isRequired,
@@ -129,12 +129,19 @@ export default class BarChart extends React.Component {
     this._renderGraph(props);
   }
 
-  shouldComponentUpdate(nextProps){
-    const props = merge(nextProps);
-    this._defineAxis(props);
-    this._reusableGraph(props);
-    return false;
+  componentDidUpdate(prevProps) {
+    if(this.props.data !== prevProps.data ) {
+      this._defineAxis(this.props);
+      this._reusableGraph(this.props);
+    }    
   }
+
+  // shouldComponentUpdate(nextProps){
+  //   const props = merge(nextProps);
+  //   this._defineAxis(props);
+  //   this._reusableGraph(props);
+  //   return false;
+  // }
 
   render() {
     return (
@@ -144,3 +151,5 @@ export default class BarChart extends React.Component {
     );
   }
 }
+
+export default BarChart;

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.0",
     "axios": "^0.18.0",
     "d3": "^3.5.16",
     "firebase": "^5.8.0",

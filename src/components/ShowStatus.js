@@ -22,7 +22,7 @@ class ShowStatus extends Component {
 	                  data={this.props.data}
 	                  onBarClick={this.handleBarClick}/>
 	            </div>
-        	</div>	
+        	</div>
 		);
 	}
 }
