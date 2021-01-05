@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^3.9.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "d3": "^3.5.16",
     "firebase": "^5.8.0",
     "prop-types": "^15.6.2",
